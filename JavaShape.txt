@@ -1,0 +1,206 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+abstract class Shape{
+    public abstract void input();
+    public abstract void output();
+    
+    public abstract double getPerimeter();
+    public abstract double getArea();
+}
+class Triangle extends Shape
+{
+    public double a;
+    public double b;
+    public double c;
+    
+    public Triangle() 
+    {
+        a=0;b=0;c=0;
+    }
+    public void input() 
+    {
+    System.out.print("3 side length:");
+    Scanner kb = new Scanner(System.in);
+        this.a=kb.nextInt();
+        this.b=kb.nextInt();
+        this.c=kb.nextInt();
+    }
+    public void output()
+    {
+        System.out.println("This is a "+a+"_"+b+"_"+c+" Triangle.");
+    }
+    public double getPerimeter()
+    {
+        return this.a+this.b+this.c;
+    }
+    public double getArea()
+    {
+        final double p=(a+b+c)/2;
+        return Math.sqrt(p*(p-a)*(p-b)*(p-c));
+    }
+}
+class SqrTriangle extends Triangle
+{
+     public SqrTriangle()
+    {
+        super();
+    }
+        public void input()
+    {
+        System.out.print("2 right angle sides:");
+        Scanner kb=new Scanner(System.in);
+        this.a=kb.nextInt();
+        this.b=kb.nextInt();
+        this.c=Math.sqrt(this.a*this.a+this.b*this.b);
+    }
+    public void output()
+    {
+        System.out.println("This is a "+a+"_"+b+"_"+c+" SqrTriangle.");
+    }
+}
+class Rectangle extends Shape
+{
+    public double a;
+    public double b;
+    public Rectangle()
+    {
+        a=0;b=0;
+    }
+    public void input()
+    {
+        System.out.print("2 side length:");
+        Scanner kb = new Scanner(System.in);
+        this.a=kb.nextInt();
+        this.b=kb.nextInt();
+    }
+    public void output()
+    {
+        System.out.println("This is a "+a+"_"+b+" Rectangle.");
+    }
+      public double getPerimeter()
+    {
+        return (a+b)*2;
+    }
+    public double getArea()
+    {
+        return a*b;
+    }
+}
+class Square extends Rectangle
+{
+    public Square()
+    {
+        super();
+    }
+        public void input()
+    {
+        System.out.print("Side:");
+        Scanner kb=new Scanner(System.in);
+        this.a=kb.nextInt();
+        this.b=this.a;
+    }
+    public void output()
+    {
+        System.out.println("This is a "+a+" Square.");
+    }
+  
+}
+class Elipse extends Shape
+{
+    public double a;
+    public double b;
+    public Elipse()
+    {
+        a=0;b=0;
+    }
+    public void input()
+    {
+        System.out.print("Axes:");
+        Scanner kb = new Scanner(System.in);
+        this.a=kb.nextInt()/2;
+        this.b=kb.nextInt()/2;
+    }
+    public void output()
+    {
+        System.out.println("This is a "+a+"_"+b+" Elipse.");
+    }
+    public double getPerimeter()
+    {
+        return 2*3.14*Math.sqrt((a*a+b*b)/(2*1.0));
+    }
+    public double getArea()
+    {
+        return 3.14*a*b;
+    }
+}
+class Circle extends Elipse
+{
+    public Circle()
+    {
+        super();
+    }
+  public void input()
+    {
+        System.out.print("Radius:");
+        Scanner kb=new Scanner(System.in);
+        this.a=kb.nextInt();
+        this.b=this.a;
+    }
+    public void output()
+    {
+        System.out.println("This is a "+a+" Circle.");
+    }
+}
+    
+
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int choice;
+	    Shape shape=new Triangle();
+	do {	
+	    choice=0;
+		System.out.println("List of shape:");
+		System.out.println("1. Triangle");
+		System.out.println("2. SqrTriangle");
+		System.out.println("3. Elipse");
+		System.out.println("4. Circle");
+		System.out.println("5. Rectangle");
+		System.out.println("6. Square");
+		System.out.print("Please choose:");
+		Scanner kb=new Scanner(System.in);
+		choice=kb.nextInt();
+		switch(choice)
+		{
+		    case 1:
+		        shape=new Triangle();
+		        break;
+		    case 2:
+		        shape=new SqrTriangle();
+		        break;
+		    case 3:
+		        shape=new Elipse();
+		        break;
+		    case 4:
+		        shape=new Circle();
+		        break;
+            case 5:
+		        shape=new Rectangle();
+		        break;
+		    case 6:
+		        shape=new Square();
+		        break;
+		    default:
+		    choice=0;
+		}
+		shape.input();
+		shape.output();
+		System.out.println("Perimeter: "+Math.round(shape.getPerimeter() *100) / 100);
+		System.out.println("Area:" +Math.round(shape.getArea() * 100) / 100);
+		System.out.println();
+		System.out.println();
+	}while(choice!=0);
+	}
+}
