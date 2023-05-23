@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/background"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/txv_class_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:paddingStart="20dp"
+        android:text="id"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/txv_class_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:paddingStart="20dp"
+        android:text="name"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/txv_class_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="60dp"
+        android:paddingStart="20dp"
+        android:text="dob"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/txv_class_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingEnd="20dp"
+        android:text="num"
+        android:textSize="15dp" />
+</RelativeLayout>
