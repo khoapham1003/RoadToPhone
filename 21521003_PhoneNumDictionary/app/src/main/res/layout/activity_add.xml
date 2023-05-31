@@ -9,36 +9,62 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name:"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp"
+        android:text="First Name:"
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/edt_name"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginStart="150dp"
-        android:textSize="20dp"/>
+        android:id="@+id/edt_fistname"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
+        android:singleLine="true"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="135dp"
+        android:text="Last Name:"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/edt_lastname"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="125dp"
+        android:singleLine="true"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="210dp"
         android:text="Phone number:"
         android:textSize="20dp" />
 
     <EditText
         android:id="@+id/edt_phonenum"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="50dp"
-        android:textSize="20dp"/>
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="200dp"
+        android:inputType="phone"
+        android:singleLine="true"
+        android:textSize="20dp" />
+
     <Button
         android:id="@+id/btn_save"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Save"/>
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:text="Save" />
 
 
 </RelativeLayout>

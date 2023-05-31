@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menu_ascending_order"
+    <item
+        android:id="@+id/menu_ascending_order"
         android:title="Sort by Asc" />
-    <item android:id="@+id/menu_descending_order"
+    <item
+        android:id="@+id/menu_descending_order"
         android:title="Sort byt Desc" />
-    <item android:id="@+id/menu_add"
-    android:title="Add to dictionary" />
+    <item
+        android:id="@+id/menu_add"
+        android:title="Add" />
+    <item
+        android:id="@+id/menu_reload"
+        android:title="Reload" />
 </menu>

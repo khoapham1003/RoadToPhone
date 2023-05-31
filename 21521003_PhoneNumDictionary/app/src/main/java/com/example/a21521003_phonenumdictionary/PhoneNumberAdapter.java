@@ -13,7 +13,7 @@ import java.util.List;
 public class PhoneNumberAdapter extends BaseAdapter {
     private Context context;
     private int layout;
-    private List<PhoneNumber> phoneNumberList ;
+    private List<PhoneNumber> phoneNumberList;
 
     public PhoneNumberAdapter(Context context, int layout, List<PhoneNumber> phoneNumberList) {
         this.context = context;
@@ -39,13 +39,13 @@ public class PhoneNumberAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view=inflater.inflate(layout,null);
+        view = inflater.inflate(layout, null);
         TextView tv_ID = (TextView) view.findViewById(R.id.txv_id);
         TextView tv_Name = (TextView) view.findViewById(R.id.txv_name);
         TextView tv_PhoneNum = (TextView) view.findViewById(R.id.txv_phonenum);
 
         PhoneNumber student = phoneNumberList.get(i);
-        tv_ID.setText("#"+(i+1));
+        tv_ID.setText("#" + (i + 1));
         tv_Name.setText(student.getName());
         tv_PhoneNum.setText(student.getPhoneNum());
 

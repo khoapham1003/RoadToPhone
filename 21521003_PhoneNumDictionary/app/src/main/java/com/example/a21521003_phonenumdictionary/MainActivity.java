@@ -83,11 +83,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case R.id.menu_add: {
-                Intent intent = new Intent(MainActivity.this,AddActivity.class);
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
                 startActivity(intent);
                 break;
             }
-
+            case R.id.menu_reload: {
+                adapter.notifyDataSetChanged();
+                break;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -106,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
                     String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
                     String name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
                     phoneNumber.setName(name);
-
                     Cursor phoneCursor = cr.query(
                             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
                             null,
@@ -119,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     phoneCursor.close();
                     testList.add(phoneNumber);
-
                 }
             }
         }
